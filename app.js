@@ -46,28 +46,6 @@ class ToDoList {
 		})	
 	}
 
-	moveUp(task){
-		for (let i = 0; i < this.todos; i++){
-			if(this.todos[i].id === task.id){
-				let temp =  todos[i-1];
-				this.todos[i-1] = task;
-				this.todos[i] = temp;
-
-				console.log(temp + ' ' + this.todos[i-1] + ' ' + this.todos[i])
-			}
-		}
-		return this.todos;
-	}
-
-	moveDown(task){
-		for (let i = 0; i < this.todos; i++){
-			if(this.todos[i].id === task.id){
-				let temp =  todos[i+1];
-				this.todos[i+1] = task;
-				this.todos[i] = temp;
-			}
-		}
-	}
 
   }
   
@@ -78,13 +56,14 @@ let task2 = new Task('to buy bread', true, 'task2');
 let task3 = new Task('to find yogurt', true, 'task3');
 let task4 = new Task('to buy apples', false, 'task4');
 
+console.log(toDoList.todos)
 
 toDoList.addTodo(task1);
 toDoList.addTodo(task2);
 toDoList.addTodo(task3);
 toDoList.addTodo(task4);
 
-toDoList.changeStatus(task4);
+toDoList.changeStatus(task2);
 
 
 console.log(toDoList.showCompletedTasks());
@@ -94,10 +73,6 @@ console.log(toDoList.findTasks('bread'));
 console.log(toDoList.findTasks('buy'));
 console.log(toDoList.findTasks('find'));
 
-
-toDoList.moveUp(task4);
-toDoList.moveUp(task4);
-console.log(toDoList.showCompletedTasks());
 
 
 
